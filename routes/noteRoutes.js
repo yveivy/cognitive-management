@@ -1,30 +1,21 @@
-const app = require('express').Router();
+const router = require('express').Router();
 const {readFromFile, readAndAppend, writeToFile} = require('../helpers/fsHelpers');
 const uuid = require('../helpers/uuid');
 
 
 
-app.get('/', (req, res) => {
-  console.info(`${req.method} request received to retrieve notes`)
+router.get('/', (req, res) => {
+  
+  readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)));
 
-  readFromFile('./db/db.json')
-  .then((data) => {
-    const notes = JSON.parse(data);
-    res.json(notes);
-  })
-  .catch((err) => {
-    console.error(err);
-    res.status(500).json('Error retrieving notes');
-  });
 
 });
 
-app.post('/', (req, res) => {
-  console.info(`${req.method}request received to create new note`);
+router.post('/', (req, res) => {
 
   const { title, text } = req.body;
 
-  if (title && text) {
+  if (req.body) {
     const newNote = {
       id: uuid(),
       title,
@@ -37,16 +28,16 @@ app.post('/', (req, res) => {
       })
       .catch((err) => {
         console.error(err);
-        res.status(500).json('Error creating note')
+        res.status(500).json('Sorry, it did not work out')
       });
 
   } else {
-    res.status(400).json('Title and text are required');
+    res.status(400).json('formatting is important');
   }
 
 });
 // May try to incorporate this
-// app.delete
+// app.delete for bonus
 
 
-module.exports = app;
+module.exports = router;
