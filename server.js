@@ -25,5 +25,5 @@ app.get('/notes', (req, res) =>
 // const htmlRoutes = require ("./routes/htmlRoutes");
 
 app.listen(port, () =>
-  console.log(`Express server listening on port ${PORT}!`)
+  console.log(`Express server listening on port ${port}!`)
 );
