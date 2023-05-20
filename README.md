@@ -6,7 +6,7 @@ Cognitive Management is a powerful note-taking application built on Express.js f
 
 You can create notes on any topic and conveniently save them for future reference. You'll gladly replace your outdated sticky pad, and the days of jotting down important thoughts with pen and paper. Everyone knows those sticky pad notes just end up in the laundry anyway. 
 
-![alt text](./assets/cognitive-management-
+![alt text](.public/assets/cognitive-management-
 screencapture.png)
 
 ## License:
