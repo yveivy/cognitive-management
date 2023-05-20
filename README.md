@@ -23,5 +23,3 @@ Stack Overflow
 If you would like additional information, please contact Yevette Hunt,
 
  My GitHub username is yveivy
-
- https://github.com/yveivy/command-script-doc-wiz/blob/main/demo-command-script-doc-wiz.webm
