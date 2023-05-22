@@ -3,7 +3,7 @@ const path = require('path');
 const api = require('./routes/index.js');
 
 
-const port = process.env.PORT || 3001
+const PORT = process.env.PORT || 3001
 
 const app = express();
 
@@ -25,5 +25,5 @@ app.get('/notes', (req, res) =>
 // const htmlRoutes = require ("./routes/htmlRoutes");
 
 app.listen(port, () =>
-  console.log(`Express server listening on port ${port}!`)
+  console.log(`Express server listening on port ${PORT}!`)
 );
